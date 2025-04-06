@@ -1,3 +1,8 @@
+"""
+Extract dominant colors from character images and save to CSV
+Usage: python color_extractor.py --input_dir ./data/characters --output_file ./data/color_analysis.csv
+"""
+
 import os
 import csv
 from PIL import Image
@@ -5,9 +10,16 @@ import numpy as np
 from sklearn.cluster import KMeans
 
 def rgb_to_hex(rgb):
+    """Convert RGB tuple to hexadecimal color code"""
     return "#{:02x}{:02x}{:02x}".format(rgb[0], rgb[1], rgb[2])
 
 def get_dominant_colors(image_path, num_colors=5, resize_size=(100, 100)):
+    """
+    Extract dominant colors using K-means clustering
+    Returns:
+        list: Hex color codes
+        list: Percentage of each color
+    """
     image = Image.open(image_path)
     image = image.resize(resize_size).convert('RGB')
     pixels = np.array(image).reshape(-1, 3)
@@ -25,6 +37,7 @@ def get_dominant_colors(image_path, num_colors=5, resize_size=(100, 100)):
     return hex_colors, percentages
 
 def process_images(input_dir, output_csv):
+    """Process all images in directory and save results to CSV"""
     with open(output_csv, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(['File name', 'HEX color', 'Percent', 'Percent without background'])
