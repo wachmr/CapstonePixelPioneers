@@ -20,3 +20,27 @@ python src/color_extractor.py --input_dir ./data/characters --output_file ./data
 |--------------|---------|--------|----------------|
 | hero_superman| #0000FF | 45.25% |                |
 | hero_superman| #FF0000 | 30.10% | 55.02%         |
+
+
+# Archetype Color Visualizer
+
+Visualization tools for character color analysis.
+
+## Features
+- Square grid palette visualizations
+- Archetype similarity heatmaps
+- Individual character color distributions
+
+## Usage
+```python
+# Generate all visualizations
+from src.color_palette_visualizer import visualize_archetype_palettes
+from src.similarity_analyzer import analyze_similarity
+
+visualize_archetype_palettes("data/color_analysis.xlsx", "output/")
+analyze_similarity("data/color_analysis.xlsx", "output/")
+
+# Plot individual character
+from src.character_color_plot import plot_character_colors
+plot_character_colors("data/color_analysis.xlsx", "Sage", "Master Splinter")
+```
