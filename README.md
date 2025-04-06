@@ -1,5 +1,4 @@
 # CapstonePixelPioneers
-# Archetype Color Analyzer
 
 Capstone project for University of Michigan's Master of Applied Data Science program by Miranda Kuns and Heather Whittaker analyzing character color palettes and their psychological archetype associations using computer vision and clustering techniques.
 
@@ -11,13 +10,16 @@ Clone this repository to get started.
 ```bash
 git clone https://github.com/wachmr/archetype-color-analyzer.git
 cd archetype-color-analyzer
+```
+## Prerequisites
 
-##Prerequisites
 Get all of the dependencies needed.
 
+
+```
 pip install -r requirements.txt
 
-
+```
 
 # Color Archetype Analyzer
 
