@@ -31,10 +31,10 @@ Analyzes character images to extract dominant colors and map to psychological ar
 - CSV output for further analysis
 
 ## Usage
-1. Place character images in `/data/characters`
+1. Place character images in `/characters`
 2. Run the analyzer:
 ```bash
-python src/color_extractor.py --input_dir ./data/characters --output_file ./data/results.csv
+python src/color_extractor.py --input_dir ./characters --output_file ./results.csv
 ```
 
 ## Sample Output
